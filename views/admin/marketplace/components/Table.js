@@ -21,16 +21,21 @@ import {
 	useTable,
   } from "react-table";
 
+  import { useMemo } from "react";
+
   function Tabled(props) {
 
 	const { columnsData, tableData } = props;
+
+	const columns = useMemo(() => columnsData, [columnsData]);
+  	const data = useMemo(() => tableData, [tableData]);
 
 	const tableInstance = useTable(
 		{
 		  // columns,
 		  // data,
-		  columns: columnsData,
-		  data: tableData,
+		  columns,
+		  data,
 		},
 		useGlobalFilter,
 		useSortBy,

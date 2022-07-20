@@ -7,7 +7,7 @@ const nextConfig = {
       {
         source: '/',
         destination: '/admin/default',
-        permanent: true,
+        permanent: false,
       },
     ]
   },
